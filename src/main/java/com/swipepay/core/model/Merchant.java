@@ -1,7 +1,6 @@
 package com.swipepay.core.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.sql.Time;

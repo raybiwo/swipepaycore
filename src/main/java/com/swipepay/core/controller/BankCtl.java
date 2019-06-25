@@ -6,16 +6,17 @@ import com.swipepay.core.util.CommonConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/bank")
+@RequestMapping("/api/bank")
 public class BankCtl {
 
     @Autowired
     BankSvc bankSvc;
 
-    @GetMapping("/all")
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public RestResponse getAll(){
         RestResponse restResponse = new RestResponse();
         restResponse.setStatus(CommonConstants.OK_REST_STATUS);

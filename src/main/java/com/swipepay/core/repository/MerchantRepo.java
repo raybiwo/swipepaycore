@@ -23,6 +23,6 @@ public interface MerchantRepo extends JpaRepository<Merchant, Integer> {
             "order by d.TRANS_AMT desc, a.name", nativeQuery = true)
     public List<Object[]> getMerchantReport();
 
-    @Query("select a.name, b.name from Merchant a LEFT JOIN MerchantCategory b ON a.categoryId = b.id")
+    @Query("select a.name, b.name from Merchant a, MerchantCategory b where a.categoryId = b.id")
     public List<Object[]> getMerchantDetail();
 }
